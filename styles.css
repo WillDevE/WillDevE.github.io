@@ -28,7 +28,26 @@
   /* Dark mode styles */
     body.dark-mode {
     background-color: #111;
+    color: #fff;
   }
+  
+    .card.dark-mode {
+    background-color: #222;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+  }
+  
+    .card.dark-mode:hover {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  }
+  
+    .card.dark-mode h3 {
+    color: #fff;
+  }
+  
+    .card.dark-mode p {
+    color: #ccc;
+  }
+  
   
   /* Center the content vertically and horizontally */
   .container {
