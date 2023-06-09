@@ -7,8 +7,26 @@
   
   /* Set a background color and font styles */
   body {
-    background-color: #f2f2f2;
+    background-color: #222;
+    color: #fff;
     font-family: Arial, sans-serif;
+  }
+  /* Create a dark mode toggle */
+    .dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    cursor: pointer;
+  }
+  /* Dark mode icon */
+    .dark-mode-toggle i {
+    font-size: 24px;
+  }
+  
+  /* Dark mode styles */
+    body.dark-mode {
+    background-color: #111;
   }
   
   /* Center the content vertically and horizontally */
@@ -29,15 +47,16 @@
   
   /* Style the portfolio cards */
   .card {
-    background-color: #fff;
+    background-color: #333;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease;
   }
   .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
   }
   
   .card img {
@@ -49,13 +68,14 @@
   }
   
   .card h3 {
+    color: #fff;
     font-size: 18px;
     margin-bottom: 10px;
   }
   
   .card p {
     font-size: 14px;
-    color: #777;
+    color: #ccc;
   }
   
   /* Add animations to the cards */
