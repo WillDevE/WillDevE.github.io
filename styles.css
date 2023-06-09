@@ -3,139 +3,159 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-/* Set a background color and font styles */
-body {
+  }
+  
+  /* Set a background color and font styles */
+  body {
     background-color: #fff;
     color: #222;
     font-family: Arial, sans-serif;
-    transition: background-color 0.3s ease;
-}
-
-/* Create a dark mode toggle */
-.dark-mode-toggle {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Create a dark mode toggle */
+  .dark-mode-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 9999;
     cursor: pointer;
     padding: 5px; /* Add padding */
-}
-
-/* Dark mode icon */
-.dark-mode-toggle i {
+  }
+  
+  /* Dark mode icon */
+  .dark-mode-toggle i {
     font-size: 24px;
-    transition: transform 0.3s ease;
-}
-
-/* Dark mode styles */
-body.dark-mode {
+    transition: opacity 0.3s;
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode {
     background-color: #222;
     color: #fff;
-}
-
-.dark-mode-toggle i.fa-moon.animate {
-    transform: rotate(360deg);
-}
-
-.dark-mode-toggle i.fa-sun.animate {
-    transform: rotate(360deg);
-}
-
-/* Center the content vertically and horizontally */
-.container {
+  }
+  .card.dark-mode {
+    background-color: #333; /* Change to desired dark mode background color */
+  }
+  
+  /* Add animation styles */
+  @keyframes showIcon {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes hideIcon {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  /* Center the content vertically and horizontally */
+  .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     padding: 20px;
-}
-
-/* Create a grid layout */
-.grid {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Create a grid layout */
+  .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
-}
-
-/* Style the portfolio cards */
-.card {
-    background-color: #ccc;
+  }
+  
+  /* Style the portfolio cards */
+  .card {
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
+    transition: transform 0.3s ease, background-color 0.3s;
+  }
+  
+  .card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
+  }
+  
+  .card img {
     width: 100%;
     max-height: 200px;
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 10px;
-}
-
-.card h3 {
-    color: #222;
+  }
+  
+  .card h3 {
+    color: rgb(255, 255, 255);
     font-size: 18px;
     margin-bottom: 10px;
-}
-
-.card p {
+  }
+  
+  .card p {
     font-size: 14px;
-    color: #555;
-}
-
-/* Add animations to the cards */
-.card.animated {
+    color: #666;
+  }
+  
+  /* Add animations to the cards */
+  .card.animated {
     animation-duration: 1s;
     animation-fill-mode: both;
-}
-
-/* Define animation classes for each card */
-.card.animated:nth-child(1) {
+  }
+  
+  /* Define animation classes for each card */
+  .card.animated:nth-child(1) {
     animation-name: fadeInUp;
-}
-
-.card.animated:nth-child(2) {
+  }
+  
+  .card.animated:nth-child(2) {
     animation-name: fadeInUp;
     animation-delay: 200ms;
-}
-
-/* Define the fadeInUp animation */
-@keyframes fadeInUp {
+  }
+  
+  .card.animated:nth-child(3) {
+    animation-name: fadeInUp;
+    animation-delay: 400ms;
+  }
+  
+  /* Define the fadeInUp animation */
+  @keyframes fadeInUp {
     from {
-        opacity: 0;
-        transform: translateY(20px);
+      opacity: 0;
+      transform: translateY(20px);
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
-
-/* Add responsiveness for smaller screens */
-@media (max-width: 768px) {
+  }
+  
+  /* Add responsiveness for smaller screens */
+  @media (max-width: 768px) {
     .grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-
+  
     .card img {
-        max-height: 150px;
+      max-height: 150px;
     }
-
+  
     .card h3 {
-        font-size: 16px;
+      font-size: 16px;
     }
-
+  
     .card p {
-        font-size: 12px;
+      font-size: 12px;
     }
-}
+  }
+  

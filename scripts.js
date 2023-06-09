@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const sunIcon = darkModeToggle.querySelector('.fa-sun');
 
         if (body.classList.contains('dark-mode')) {
-            moonIcon.classList.remove('animate');
-            sunIcon.classList.add('animate');
+            moonIcon.style.animation = 'hideIcon 0.3s forwards';
+            sunIcon.style.animation = 'showIcon 0.3s forwards';
         } else {
-            sunIcon.classList.remove('animate');
-            moonIcon.classList.add('animate');
+            moonIcon.style.animation = 'showIcon 0.3s forwards';
+            sunIcon.style.animation = 'hideIcon 0.3s forwards';
         }
     });
 });
