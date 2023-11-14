@@ -1,18 +1,10 @@
-var cards = document.getElementsByClassName('card');
+// This part will handle the tilt effect on hover
+$('.square').on('mousemove', function (e) {
+  const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+  const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+  $(this).css('transform', `rotateY(${xAxis}deg) rotateX(${-yAxis}deg)`);
+});
 
-for (var i = 0; i < cards.length; i++) {
-  cards[i].addEventListener('click', function() {
-    this.classList.toggle('flipped');
-
-    var cardFront = this.querySelector('.card-front');
-    var cardBack = this.querySelector('.card-back');
-
-    if (cardFront.classList.contains('hidden')) {
-      cardFront.classList.remove('hidden');
-      cardBack.classList.add('hidden');
-    } else {
-      cardFront.classList.add('hidden');
-      cardBack.classList.remove('hidden');
-    }
-  });
-}
+$('.square').on('mouseleave', function () {
+  $(this).css('transform', 'rotateY(0deg) rotateX(0deg)');
+});
