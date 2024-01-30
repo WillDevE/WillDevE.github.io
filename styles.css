@@ -1,97 +1,73 @@
-body {
-  background-color: #222;
+/* Add your custom styles here */
+
+/* Navbar */
+.navbar {
+  background-color: #333;
   color: #fff;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
-.container {
+.navbar h1 {
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Replace with your desired font */
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 0 20px;
+}
+
+.nav-links li {
+  margin-right: 10px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Grid */
+.container {
+  margin-top: 20px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  grid-gap: 20px;
 }
 
 .square {
-  background-color: #333;
-  border-radius: 10px;
+  background-color: #f2f2f2;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  transition: transform 0.3s ease-in-out;
-  overflow: hidden;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Add transition for smooth color change */
 }
 
 .square:hover {
-  transform: scale(1.05);
+  background-color: #555; /* Change background color on hover */
+  cursor: pointer;
 }
 
-.square::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease-in-out;
-  pointer-events: none;
-  transform-origin: center;
-  background-color: rgba(255, 255, 255, 0);
+.square h3, .square p {
+  color: #333;
 }
 
-.square:hover::after {
-  background-color: rgba(255, 255, 255, 0.05);
-  transform: rotateX(2deg) rotateY(2deg);
+.small {
+  height: 200px;
 }
 
-.navbar {
-  background-color: #111;
+.medium {
+  height: 300px;
+}
+
+.large {
+  height: 400px;
+}
+
+/* Dark theme */
+body {
+  background-color: #222;
   color: #fff;
-  padding: 15px 0;
-}
-
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #fff;
-  transition: color 0.3s ease-in-out;
-}
-
-.nav-links li a:hover {
-  color: #f0f0f0;
-}
-
-@media only screen and (max-width: 600px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    padding: 10px;
-  }
 }
